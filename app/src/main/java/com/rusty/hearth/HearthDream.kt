@@ -102,19 +102,30 @@ class HearthDream : DreamService() {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, ui.u(44f))
             setTextColor(Ui.SOFT); typeface = Ui.LIGHT; includeFontPadding = false
             setShadowLayer(ui.u(10f), 0f, ui.u(2f), Color.parseColor("#B3000000"))
-        }, LinearLayout.LayoutParams(-2, -2).apply { topMargin = ui.u(10) })
+        }, LinearLayout.LayoutParams(-1, -2).apply { topMargin = ui.u(10) })
         weather = ui.text(38, Ui.SOFT, Ui.LIGHT)
-        info.addView(weather, LinearLayout.LayoutParams(-2, -2).apply { topMargin = ui.u(16) })
+        info.addView(weather, LinearLayout.LayoutParams(-1, -2).apply { topMargin = ui.u(16) })
         frame.addView(info, infoParams())
+        alignInfo()
 
         credit = ui.text(22, Color.parseColor("#80FFFFFF"), Ui.LIGHT).apply { maxLines = 1; maxWidth = ui.u(900) }
         frame.addView(credit, creditParams())
         return frame
     }
 
-    private fun infoParams() = FrameLayout.LayoutParams(-2, -2,
+    /**
+     * A fixed-width block, not wrap_content: sized while the clock read "9:59", a
+     * wrapped block didn't grow for "10:25" and cut it to "10:2". The text inside
+     * hugs whichever corner the block is in.
+     */
+    private fun infoParams() = FrameLayout.LayoutParams(ui.u(1100), -2,
         Gravity.BOTTOM or if (onLeft) Gravity.START else Gravity.END).apply {
         leftMargin = ui.u(96); rightMargin = ui.u(96); bottomMargin = ui.u(80)
+    }
+
+    private fun alignInfo() {
+        val g = if (onLeft) Gravity.START else Gravity.END
+        for (i in 0 until info.childCount) (info.getChildAt(i) as? TextView)?.gravity = g
     }
 
     private fun creditParams() = FrameLayout.LayoutParams(-2, -2,
@@ -161,6 +172,7 @@ class HearthDream : DreamService() {
             onLeft = !onLeft
             info.animate().alpha(0f).setDuration(600).withEndAction {
                 info.layoutParams = infoParams()
+                alignInfo()
                 credit.layoutParams = creditParams()
                 info.animate().alpha(1f).setDuration(600).start()
             }.start()
