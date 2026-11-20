@@ -4,7 +4,7 @@ A simple home screen for the Family Room TV (Sony BRAVIA 4K VH2, Google TV /
 Android 12, `192.168.1.75`), built so anyone in the family can find things.
 
 - **Top:** clock, date, and weather plus the next countdown from
-  [lookout-feed](../latitude-services/lookout-feed) (`192.168.1.158:8473/api/feed`,
+  [lookout-feed](https://github.com/rusty-workshop/latitude-services/tree/main/lookout-feed) (`192.168.1.158:8473/api/feed`,
   refreshed every 10 minutes; hidden until the first fetch succeeds).
 - **Watch:** big 16:9 app banners. The first time Hearth runs, this row copies
   Projectivy's TV Apps row: Netflix, Disney+, YouTube, Jellyfin, Lookout,
