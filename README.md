@@ -104,3 +104,7 @@ To go back to Projectivy:
 ```bash
 adb -s 192.168.1.75:5555 shell settings put secure enabled_accessibility_services com.spocky.projengmenu/.services.ProjectivyAccessibilityService:com.rusty.tvremap/.RemapService
 ```
+
+## License
+
+AGPL-3.0-or-later
