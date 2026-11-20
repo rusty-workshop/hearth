@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Lookout's dark navy gradient with a faint purple glow top-right. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <gradient android:angle="270" android:startColor="#171C2E" android:endColor="#0C0E14" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <gradient android:type="radial" android:gradientRadius="900"
+                android:centerX="0.85" android:centerY="0.0"
+                android:startColor="#33AA5CC3" android:endColor="#00AA5CC3" />
+        </shape>
+    </item>
+</layer-list>

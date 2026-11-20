@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Hearth</string>
+    <string name="home_key_description">Opens Hearth when you press Home on the remote.</string>
+    <style name="Hearth" parent="@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen">
+        <item name="android:windowBackground">@drawable/bg</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+</resources>

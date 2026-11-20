@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 320x180 TV banner: a little house with a glowing hearth on purple. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="320dp" android:height="180dp"
+    android:viewportWidth="320" android:viewportHeight="180">
+    <path android:fillColor="#1A1F33" android:pathData="M0,0h320v180h-320z" />
+    <path android:fillColor="#AA5CC3" android:pathData="M160,34 L226,88 L214,88 L214,146 L106,146 L106,88 L94,88 Z" />
+    <path android:fillColor="#1A1F33" android:pathData="M140,146 L140,108 Q160,92 180,108 L180,146 Z" />
+    <path android:fillColor="#FDBA74" android:pathData="M160,142 Q146,132 154,118 Q156,126 160,124 Q158,114 166,108 Q164,120 172,126 Q176,136 160,142 Z" />
+</vector>
