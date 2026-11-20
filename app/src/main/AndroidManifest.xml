@@ -44,11 +44,17 @@
             </intent-filter>
         </activity>
 
+        <!-- Exported so tv-button-remap can open it from the remote's gear button. -->
         <activity
             android:name=".AllAppsActivity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="landscape"
-            android:theme="@style/Hearth" />
+            android:theme="@style/Hearth">
+            <intent-filter>
+                <action android:name="com.rusty.hearth.ALL_APPS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <!-- Screensaver: nature photo, clock and weather. -->
         <service
